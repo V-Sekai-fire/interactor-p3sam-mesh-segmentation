@@ -8,26 +8,24 @@ packaging convention. Interface facts from
 ## License — corrected, not carried from the RFD
 
 **RFD 0041's `cog.yaml` records `license: "MIT"`. That's wrong**, checked against the real
-upstream: P3-SAM ships as part of [`Tencent-Hunyuan/Hunyuan3D-Part`](
-https://github.com/Tencent-Hunyuan/Hunyuan3D-Part), under the **Tencent Hunyuan 3D-Part
+upstream: P3-SAM ships as part of [`Tencent-Hunyuan/Hunyuan3D-Part`](https://github.com/Tencent-Hunyuan/Hunyuan3D-Part), under the **Tencent Hunyuan 3D-Part
 Community License Agreement** — a custom, territory-limited license ("does not apply in the
 European Union, United Kingdom and South Korea"), not MIT. No separately-licensed standalone
 P3-SAM repo exists (checked GitHub search directly).
 
-Marked **license: review pending** here, not MIT — per [RFD 0028](
-https://github.com/weftspun/request-for-discussion/tree/main/0028-model-license-gate), the
+Marked **license: review pending** here, not MIT — per [RFD 0028](https://github.com/weftspun/request-for-discussion/tree/main/0028-model-license-gate), the
 license gate is a hard prerequisite before shipping to paying users, and this model has not
 cleared it. Whoever owns RFD 0041 should correct that record.
 
 ## Model
 
-| Property | Value |
-|---|---|
-| Upstream | [Tencent-Hunyuan/Hunyuan3D-Part](https://github.com/Tencent-Hunyuan/Hunyuan3D-Part), `P3-SAM/` |
-| License | **review pending** — Tencent Hunyuan 3D-Part Community License (territory-restricted), not MIT as RFD 0041 states |
-| Parameters | 0.4 B, estimated (RFD 0041) |
-| bf16 | 0.8 GB |
-| Q4_K_M | 0.22 GB (not shipped — bf16 is the format) |
+| Property   | Value                                                                                                             |
+| ---------- | ----------------------------------------------------------------------------------------------------------------- |
+| Upstream   | [Tencent-Hunyuan/Hunyuan3D-Part](https://github.com/Tencent-Hunyuan/Hunyuan3D-Part), `P3-SAM/`                    |
+| License    | **review pending** — Tencent Hunyuan 3D-Part Community License (territory-restricted), not MIT as RFD 0041 states |
+| Parameters | 0.4 B, estimated (RFD 0041)                                                                                       |
+| bf16       | 0.8 GB                                                                                                            |
+| Q4_K_M     | 0.22 GB (not shipped — bf16 is the format)                                                                        |
 
 P3-SAM replaces PartField, which RFD 0028 removed for a non-commercial weight license — worth
 noting since P3-SAM's own license needs the same scrutiny that removed PartField.
@@ -36,12 +34,12 @@ noting since P3-SAM's own license needs the same scrutiny that removed PartField
 
 `POST /predict`:
 
-| Input | Type | Default | Note |
-|---|---|---|---|
-| `mesh` | Path/URL/base64 (GLB) | required | |
-| `segment_every_part` | bool | false | Returns every part found, ignores `max_parts` |
-| `max_parts` | int | 32 | |
-| `seed` | int | -1 | |
+| Input                | Type                  | Default  | Note                                          |
+| -------------------- | --------------------- | -------- | --------------------------------------------- |
+| `mesh`               | Path/URL/base64 (GLB) | required |                                               |
+| `segment_every_part` | bool                  | false    | Returns every part found, ignores `max_parts` |
+| `max_parts`          | int                   | 32       |                                               |
+| `seed`               | int                   | -1       |                                               |
 
 Returns `{labels, parts, seed, stub}` — **not** `{glb, layer}` like the mesh-generation models.
 Per RFD 0041: `labels` is one integer per face (written as a file, not an inline list — a
