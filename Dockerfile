@@ -32,8 +32,8 @@ RUN pip install --no-cache-dir \
       torch==2.5.1 numpy==2.1.3 safetensors==0.4.5 trimesh==4.10.1 \
       huggingface_hub==0.26.2 fastapi==0.115.5 uvicorn==0.32.1 pydantic==2.10.3
 
-# NOT YET WIRED UP FOR REAL -- see server.py's _run_upstream NotImplementedError
-# and README's Status section. This clone and weight download are here so the
+# NOT YET WIRED UP FOR REAL -- see server.py's _run_upstream NotImplementedError.
+# This clone and weight download are here so the
 # worker stage's shape is right; the actual predict() call still needs
 # confirming against P3-SAM/model.py before this image does real work.
 ARG P3SAM_REF=main

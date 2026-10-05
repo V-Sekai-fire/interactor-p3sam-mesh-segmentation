@@ -12,7 +12,10 @@ The `contract` stage builds a stub server that answers with the interface's shap
 
 ```sh
 docker build --target contract -t interactor-p3sam-mesh-segmentation:contract .
+docker run --rm -p 8000:8000 interactor-p3sam-mesh-segmentation:contract
 ```
+
+The server listens on the port `PORT` names.
 
 ## Licence
 

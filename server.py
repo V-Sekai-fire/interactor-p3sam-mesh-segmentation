@@ -57,8 +57,8 @@ def _validate(job_input: dict) -> dict:
 
 
 def _run_upstream(mesh_path: Path, work: Path, args: dict) -> tuple[Path, list[Path]]:
-    """NOT YET VERIFIED against the real P3-SAM API -- see README's Status
-    section. `model.py` in Tencent-Hunyuan/Hunyuan3D-Part/P3-SAM/ is the
+    """NOT YET VERIFIED against the real P3-SAM API (RFD 1041).
+    `model.py` in Tencent-Hunyuan/Hunyuan3D-Part/P3-SAM/ is the
     likely entry point; this needs confirming against it, not this comment,
     before the worker stage is trusted."""
     raise NotImplementedError(
