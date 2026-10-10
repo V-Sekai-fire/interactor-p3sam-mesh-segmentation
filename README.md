@@ -19,4 +19,4 @@ The server listens on the port `PORT` names.
 
 ## Licence
 
-This repository states no licence.
+MIT. See [LICENSE](LICENSE).
