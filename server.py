@@ -1,9 +1,9 @@
-"""P3-SAM mesh segmentation. RFD 0041.
+"""P3-SAM mesh segmentation. RFD66606-0041.
 
-An HTTP server in a plain Docker image (RFD 0036). Segments a mesh into parts;
+An HTTP server in a plain Docker image (RFD66606-0036). Segments a mesh into parts;
 returns the stable label array plus split-mesh GLBs.
 
-License: review pending, not MIT (RFD 0041's record is wrong -- see README).
+License: review pending, not MIT (RFD66606-0041's record is wrong -- see README).
 Upstream: Tencent-Hunyuan/Hunyuan3D-Part, P3-SAM/. `_run_upstream()`'s exact
 call is NOT yet verified against that repo (unlike TRELLIS.2's, which is) --
 this is a best-effort shape from the DETAILS.md interface table, flagged
@@ -57,7 +57,7 @@ def _validate(job_input: dict) -> dict:
 
 
 def _run_upstream(mesh_path: Path, work: Path, args: dict) -> tuple[Path, list[Path]]:
-    """NOT YET VERIFIED against the real P3-SAM API (RFD 1041).
+    """NOT YET VERIFIED against the real P3-SAM API (RFD66606-1041).
     `model.py` in Tencent-Hunyuan/Hunyuan3D-Part/P3-SAM/ is the
     likely entry point; this needs confirming against it, not this comment,
     before the worker stage is trusted."""

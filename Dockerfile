@@ -1,10 +1,10 @@
-# interactor-p3sam-mesh-segmentation -- vast.ai worker, RFD 0036/0041.
+# interactor-p3sam-mesh-segmentation -- vast.ai worker, RFD66606-0036/0041.
 #
 # License: review pending -- Tencent's own Community License, territory
-# restricted. NOT MIT despite RFD 0041's cog.yaml claiming it is. Resolve
+# restricted. NOT MIT despite RFD66606-0041's cog.yaml claiming it is. Resolve
 # this before shipping to anyone; see README.
 #
-# Weights: 0.8 GB bf16. Real source below, RFD 0041's weights.invalid was a
+# Weights: 0.8 GB bf16. Real source below, RFD66606-0041's weights.invalid was a
 # placeholder (RFC 2606), never a real pin.
 
 FROM python:3.11-slim AS contract
